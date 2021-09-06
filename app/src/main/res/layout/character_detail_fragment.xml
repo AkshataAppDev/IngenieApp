@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="CharacterDetailFragmentDataBinding">
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.example.ingenieapp.ui.MainViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/char_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.CharacterDetailFragment">
+
+        <ImageView
+            android:id="@+id/characterImage"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:scaleType="center"
+            android:visibility="@{viewmodel.selectedCharItem.img!= null ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toTopOf="@+id/characterName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:urlToImage="@{viewmodel.selectedCharItem.img}" />
+
+        <TextView
+            android:id="@+id/characterName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:text="@{viewmodel.selectedCharItem.name}"
+            android:visibility="@{viewmodel.selectedCharItem.name!= null ? View.VISIBLE: View.GONE}"
+            android:textSize="30sp"
+
+            app:layout_constraintBottom_toTopOf="@+id/occupationTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Henry Williams" />
+
+        <TextView
+            android:id="@+id/occupationTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:visibility="@{viewmodel.selectedCharItem.occupation != null ? View.GONE:View.VISIBLE}"
+            android:text="@{@string/occupation(viewmodel.selectedCharItem.occupation.toString())}"
+            android:textSize="18sp"
+
+            app:layout_constraintBottom_toTopOf="@+id/statusTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Chemistry teacher" />
+
+        <TextView
+            android:id="@+id/statusTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:visibility="@{viewmodel.selectedCharItem.status != null ? View.VISIBLE: View.GONE}"
+            android:text="@{@string/status(viewmodel.selectedCharItem.status)}"
+            android:textSize="18sp"
+
+            app:layout_constraintBottom_toTopOf="@+id/nicknameTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Dead" />
+
+        <TextView
+            android:id="@+id/nicknameTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:visibility="@{viewmodel.selectedCharItem.nickName != null ? View.GONE : View.VISIBLE}"
+            android:text="@{@string/nickname(viewmodel.selectedCharItem.nickName)}"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/seasonAppearanceTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="The professor" />
+
+        <TextView
+            android:id="@+id/seasonAppearanceTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:visibility="@{viewmodel.selectedCharItem.appearance.toString()!= null ? View.VISIBLE: View.GONE}"
+            android:text="@{@string/season_appearances(viewmodel.selectedCharItem.appearance.toString())}"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text=",1,2,3,4" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

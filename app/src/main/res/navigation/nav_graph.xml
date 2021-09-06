@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/charListFragment"
+    tools:context=".ui.activity.MainActivity">
+    <fragment
+        android:id="@+id/charListFragment"
+        android:name="com.example.ingenieapp.ui.CharacterListFragment"
+        android:label="fragment_char_list"
+        tools:layout="@layout/character_list_fragment">
+        <action
+            android:id="@+id/action_charListFragment_to_charDetailFragment"
+            app:destination="@id/charDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/charDetailFragment"
+        android:name="com.example.ingenieapp.ui.CharacterDetailFragment"
+        android:label="fragment_char_detail"
+        tools:layout="@layout/character_detail_fragment">
+        <action
+            android:id="@+id/action_charDetailFragment_to_charListFragment"
+            app:destination="@id/charListFragment"
+            app:popUpTo="@id/charListFragment" />
+    </fragment>
+</navigation>
