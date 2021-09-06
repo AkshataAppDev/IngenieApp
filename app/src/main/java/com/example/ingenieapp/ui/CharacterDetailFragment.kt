@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.ingenieapp.BaseFragment
+import com.example.ingenieapp.ui.base.BaseFragment
 import com.example.ingenieapp.databinding.CharacterDetailFragmentDataBinding
 
 internal class CharacterDetailFragment : BaseFragment() {

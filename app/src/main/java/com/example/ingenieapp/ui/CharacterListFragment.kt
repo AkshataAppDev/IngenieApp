@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import com.example.ingenieapp.BaseFragment
+import com.example.ingenieapp.ui.base.BaseFragment
 import com.example.ingenieapp.R
 import com.example.ingenieapp.databinding.CharacterListFragmentDataBinding
 

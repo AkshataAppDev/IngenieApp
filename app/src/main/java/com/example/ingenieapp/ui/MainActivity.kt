@@ -1,6 +1,7 @@
-package com.example.ingenieapp
+package com.example.ingenieapp.ui
 
 import android.os.Bundle
+import com.example.ingenieapp.R
 import dagger.android.support.DaggerAppCompatActivity
 
 class MainActivity : DaggerAppCompatActivity() {

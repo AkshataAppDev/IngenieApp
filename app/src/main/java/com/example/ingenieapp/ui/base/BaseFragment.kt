@@ -1,4 +1,4 @@
-package com.example.ingenieapp
+package com.example.ingenieapp.ui.base
 
 import android.os.Bundle
 import android.view.View

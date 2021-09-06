@@ -1,6 +1,6 @@
 package com.example.ingenieapp.di
 
-import com.example.ingenieapp.MainActivity
+import com.example.ingenieapp.ui.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
